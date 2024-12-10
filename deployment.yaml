@@ -1,20 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: index
+  name: search
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: index
+      app: search
   template:
     metadata:
       labels:
-        app: index
+        app: search
     spec:
+      nodeSelector:
+        starget: worker 
       containers:
-      - name: index-container
-        image: quay.apps.ocp.komsco.co.kr/komsco/index:latest
+      - name: search-container
+        image: quay.apps.ocp.komsco.co.kr/komsco/search:latest
         ports:
         - containerPort: 80
       imagePullSecrets:
