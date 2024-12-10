@@ -1,10 +1,10 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: route-login
+  name: route-search
   namespace: app
 spec:
   path: /
   to:
     kind: Service
-    name: 'login'
+    name: 'search'
