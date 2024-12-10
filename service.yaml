@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: login
+  name: search
   namespace: app
 spec:
   selector:
-    app: login
+    app: search
   ports:
     - protocol: TCP
       port: 80
